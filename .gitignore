@@ -18,3 +18,13 @@ target/
 
 # Serializable File
 *.ser
+
+*.txt
+
+/backup/
+backup/
+/backup
+
+/data/
+data/
+/data
