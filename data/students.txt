@@ -1,0 +1,7 @@
+S-A7|Sam|MALE|sam@gmail.com|7778886665|sam123|IT|2006|false|STUDENT
+S-C3|Lina|FEMALE|lina@gmail.com|7776665554|lina123|ECE|2009|false|STUDENT
+S-51|Tom|MALE|tom@gmail.com|9990008885|tom123|CIVIL|2001|false|STUDENT
+S-F6|Veena|FEMALE|veena@gmail.com|7897890987|veena123|CSE|1999|false|STUDENT
+S-30|Ram|MALE|ram@gmail.com|8798654567|ram123|EEE|1997|false|STUDENT
+S-05|Yuvish|MALE|yuvish@gmail.com|9807654356|yuvish123|MECH|1998|false|STUDENT
+S-B1|Venix|MALE|venix@gmail.com|987876453|venix|CSE|2000|false|STUDENT

@@ -1,0 +1,11 @@
+ELEC-BF|College Election - 1|In Campus|CREATED
+ELEC-BB|College Election - 1|In Campus|CREATED
+ELEC-BF|College Election - 1|In Campus|CREATED
+ELEC-BB|College Election - 1|In Campus|CREATED
+ELEC-BF|College Election - 1|In Campus|ACTIVE
+ELEC-BB|College Election - 1|In Campus|CREATED
+ELEC-BF|College Election - 1|In Campus|ACTIVE
+ELEC-BB|College Election - 1|In Campus|CREATED
+ELEC-BF|College Election - 1|In Campus|CLOSED
+ELEC-BB|College Election - 1|In Campus|CLOSED
+ELEC-BF|College Election - 1|In Campus|CREATED
