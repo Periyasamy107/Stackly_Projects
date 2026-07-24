@@ -6,6 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/projects/votingProject/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/projects/votingProject/voting" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/projects/libraryProject" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/projects/movieTicketBooking" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
