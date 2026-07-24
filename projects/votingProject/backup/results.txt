@@ -1,3 +1,0 @@
-RES-B7|ELEC-BF|CAN-4F|Yuvish|2|junior|RUNNER_UP
-RES-E4|ELEC-BF|CAN-02|Sam|4|College Student|WINNER
-RES-3D|ELEC-BF|CAN-C3|Veena|1|In college campus|PARTICIPATED

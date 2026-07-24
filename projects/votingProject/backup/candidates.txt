@@ -1,9 +1,0 @@
-CAN-02|S-A7|Sam|ELEC-BF|IT|College Student|Honest Politics|0|2026-07-23|null
-CAN-C3|S-F6|Veena|ELEC-BF|CSE|In college campus|Remove bribes.|0|2026-07-23|null
-CAN-02|S-A7|Sam|ELEC-BF|IT|College Student|Honest Politics|0|2026-07-23|null
-CAN-C3|S-F6|Veena|ELEC-BF|CSE|In college campus|Remove bribes.|0|2026-07-23|null
-CAN-02|S-A7|Sam|ELEC-BF|IT|College Student|Honest Politics|0|2026-07-23|null
-CAN-4F|S-05|Yuvish|ELEC-BF|MECH|junior|Destroy the drugs|0|2026-07-23|null
-CAN-C3|S-F6|Veena|ELEC-BF|CSE|In college campus|Remove bribes.|0|2026-07-23
-CAN-02|S-A7|Sam|ELEC-BF|IT|College Student|sssssssssssssssssSSSS|0|2026-07-23
-CAN-4F|S-05|Yuvish|ELEC-BF|MECH|junior|Destroy the drugs|0|2026-07-23
