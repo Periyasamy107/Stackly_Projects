@@ -1,6 +1,6 @@
 package dao;
 
-import database.DBConnection;
+import database.DBConnectionHotel;
 import enums.RoomStatus;
 import enums.RoomType;
 import model.Room;
@@ -18,7 +18,7 @@ public class RoomDAO {
                 values (?, ?, ?, ?)
                 """;
 
-        try (Connection connection = DBConnection.getDatabaseConnection();
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
 
             preparedStatement.setString(1, room.getRoomNumber());
@@ -40,7 +40,7 @@ public class RoomDAO {
     public Room findById(int roomId) {
         String sql = "SELECT * FROM rooms WHERE room_id = ?";
 
-        try (Connection connection = DBConnection.getDatabaseConnection();
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
 
             statement.setInt(1, roomId);
@@ -62,7 +62,7 @@ public class RoomDAO {
         List<Room> rooms = new ArrayList<>();
         String sql = "SELECT * FROM rooms";
 
-        try (Connection connection = DBConnection.getDatabaseConnection();
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection();
              Statement statement = connection.createStatement();
              ResultSet result = statement.executeQuery(sql)) {
 
@@ -81,7 +81,7 @@ public class RoomDAO {
         List<Room> rooms = new ArrayList<>();
         String sql = "SELECT * FROM rooms WHERE status = ?";
 
-        try (Connection connection = DBConnection.getDatabaseConnection();
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
 
             statement.setString(1, RoomStatus.AVAILABLE.name());
@@ -102,7 +102,7 @@ public class RoomDAO {
     public boolean updateStatus(int roomId, RoomStatus status) {
         String sql = "UPDATE rooms SET status = ? WHERE room_id = ?";
 
-        try (Connection connection = DBConnection.getDatabaseConnection();
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
 
             statement.setString(1, status.name());
@@ -119,7 +119,7 @@ public class RoomDAO {
     public boolean removeRoom(int roomId) {
         String sql = "DELETE FROM rooms WHERE room_id = ?";
 
-        try (Connection connection = DBConnection.getDatabaseConnection();
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
 
             statement.setInt(1, roomId);

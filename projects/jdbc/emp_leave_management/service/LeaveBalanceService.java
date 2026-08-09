@@ -65,7 +65,7 @@ public class LeaveBalanceService {
             }
 
             if (!employeeDAO.activeEmployeeExists(connection, leaveRequest.getEmployeeId())) {
-                System.out.println("Employee is not active.");
+                System.out.println("EmployeeP is not active.");
                 connection.rollback();
                 return false;
             }

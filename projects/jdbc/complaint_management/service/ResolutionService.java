@@ -1,10 +1,10 @@
 package service;
 
 import dao.ResolutionDAO;
+import database.DBConnectionHotel;
 import enums.ComplaintCategory;
 import enums.ComplaintStatus;
 import model.Complaint;
-import database.DBConnection;
 
 import java.sql.*;
 
@@ -34,7 +34,7 @@ public class ResolutionService implements ResolutionDAO {
     public boolean addResolution(String complaintId,
                                  String resolution) {
 
-        try (Connection connection = DBConnection.getDatabaseConnection()) {
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
 
             return addResolution(connection, complaintId, resolution);
 
@@ -72,7 +72,7 @@ public class ResolutionService implements ResolutionDAO {
 
     public String viewResolution(String complaintId) {
 
-        try (Connection connection = DBConnection.getDatabaseConnection()) {
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
 
             return viewResolution(connection, complaintId);
 
@@ -121,7 +121,7 @@ public class ResolutionService implements ResolutionDAO {
     public boolean markAsResolved(String complaintId,
                                   String resolution) {
 
-        try (Connection connection = DBConnection.getDatabaseConnection()) {
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
 
             return markAsResolved(
                     connection,
@@ -217,7 +217,7 @@ public class ResolutionService implements ResolutionDAO {
 
     public Complaint viewResolvedComplaint(String complaintId) {
 
-        try (Connection connection = DBConnection.getDatabaseConnection()) {
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
 
             return viewResolvedComplaint(connection, complaintId);
 

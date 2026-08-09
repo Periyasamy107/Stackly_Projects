@@ -34,7 +34,7 @@ public class EmployeeMain {
             while (true){
 
                 System.out.println("1. Manager Menu");
-                System.out.println("2. Employee Menu");
+                System.out.println("2. EmployeeP Menu");
                 System.out.println("3. Exit");
                 System.out.print("Please enter the choice from 1 to 3 only : ");
 

@@ -15,24 +15,24 @@ public class EmployeeService {
         employeeDAO = new EmployeeDAO();
     }
 
-    public boolean registerEmployee(Employee employee) {
+    public boolean registerEmployee(Employee Employee) {
 
-        if (employeeDAO.employeeIdExists(employee.getEmployeeId())) {
-            System.out.println("Employee already present : " + employee.getEmployeeName());
+        if (employeeDAO.employeeIdExists(Employee.getEmployeeId())) {
+            System.out.println("Employee already present : " + Employee.getEmployeeName());
         }
 
-        if (employeeDAO.employeeIdExists(employee.getEmployeeId())) {
+        if (employeeDAO.employeeIdExists(Employee.getEmployeeId())) {
         }
-        if (employeeDAO.emailExists(employee.getEmail())) {
+        if (employeeDAO.emailExists(Employee.getEmail())) {
             System.out.println("\nEmployee email already exists.\n");
             return false;
         }
 
-        if (!employeeDAO.managerExists(employee.getManagerId())) {
-            System.out.println("Manager not found : " + employee.getManagerId());
+        if (!employeeDAO.managerExists(Employee.getManagerId())) {
+            System.out.println("Manager not found : " + Employee.getManagerId());
         }
 
-        return employeeDAO.registerEmployeeWithBalance(employee);
+        return employeeDAO.registerEmployeeWithBalance(Employee);
     }
 
 
@@ -49,15 +49,15 @@ public class EmployeeService {
 
 
 
-    public boolean updateEmployee(Employee employee)
+    public boolean updateEmployee(Employee Employee)
         throws EmployeeNotFoundException, ManagerNotFoundException {
-        if (!employeeDAO.employeeIdExists(employee.getEmployeeId())) {
-            throw new EmployeeNotFoundException("Employee not found : " + employee.getEmployeeId());
+        if (!employeeDAO.employeeIdExists(Employee.getEmployeeId())) {
+            throw new EmployeeNotFoundException("Employee not found : " + Employee.getEmployeeId());
         }
-        if (!employeeDAO.managerExists(employee.getManagerId())) {
-            throw new ManagerNotFoundException("Manager not found : " + employee.getManagerId());
+        if (!employeeDAO.managerExists(Employee.getManagerId())) {
+            throw new ManagerNotFoundException("Manager not found : " + Employee.getManagerId());
         }
-        return employeeDAO.updateEmployee(employee);
+        return employeeDAO.updateEmployee(Employee);
     }
 
 

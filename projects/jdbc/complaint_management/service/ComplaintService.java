@@ -1,11 +1,11 @@
 package service;
 
 import dao.ComplaintDAO;
+import database.DBConnectionHotel;
 import enums.ComplaintCategory;
 import enums.ComplaintStatus;
 import model.Complaint;
 import util.ValidationUtil;
-import database.DBConnection;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -67,7 +67,7 @@ public class ComplaintService implements ComplaintDAO {
 
     public boolean registerComplaint(Complaint complaint) {
 
-        try (Connection connection = DBConnection.getDatabaseConnection()) {
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
 
             return registerComplaint(connection, complaint);
 
@@ -118,7 +118,7 @@ public class ComplaintService implements ComplaintDAO {
 
     public List<Complaint> viewAllComplaints() {
 
-        try (Connection connection = DBConnection.getDatabaseConnection()) {
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
 
             return viewAllComplaints(connection);
 
@@ -164,7 +164,7 @@ public class ComplaintService implements ComplaintDAO {
 
     public Complaint searchComplaintById(String complaintId) {
 
-        try (Connection connection = DBConnection.getDatabaseConnection()) {
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
 
             return searchComplaintById(connection, complaintId);
 
@@ -220,7 +220,7 @@ public class ComplaintService implements ComplaintDAO {
 
     public boolean updateComplaint(Complaint complaint) {
 
-        try (Connection connection = DBConnection.getDatabaseConnection()) {
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
 
             return updateComplaint(connection, complaint);
 
@@ -244,7 +244,7 @@ public class ComplaintService implements ComplaintDAO {
 
     public boolean deleteComplaint(String complaintId) {
 
-        try (Connection connection = DBConnection.getDatabaseConnection()) {
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
 
             return deleteComplaint(connection, complaintId);
 
@@ -294,7 +294,7 @@ public class ComplaintService implements ComplaintDAO {
 
     public List<Complaint> viewComplaintsByUser(String userId) {
 
-        try (Connection connection = DBConnection.getDatabaseConnection()) {
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
 
             return viewComplaintsByUser(connection, userId);
 

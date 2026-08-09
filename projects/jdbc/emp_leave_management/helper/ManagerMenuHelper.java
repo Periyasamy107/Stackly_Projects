@@ -37,7 +37,7 @@ public class ManagerMenuHelper {
             System.out.println("7. View Individual Leave Request");
             System.out.println("8. Approve Leave");
             System.out.println("9. Reject Leave");
-            System.out.println("10. View Employee Leave Balance");
+            System.out.println("10. View EmployeeP Leave Balance");
             System.out.println("11. View Leave Reports");
             System.out.println("12. Back");
             System.out.print("Please enter the choice from 1 to 12 only : ");
@@ -343,7 +343,7 @@ public class ManagerMenuHelper {
         for (LeaveRequest request : requests) {
             System.out.println("----------------------------------------------");
             System.out.println("Request ID    : " + request.getRequestId());
-            System.out.println("Employee ID   : " + request.getEmployeeId());
+            System.out.println("EmployeeP ID   : " + request.getEmployeeId());
             System.out.println("Leave Type    : " + request.getLeaveType());
             System.out.println("Start Date    : " + request.getStartDate());
             System.out.println("End Date      : " + request.getEndDate());
@@ -385,7 +385,7 @@ public class ManagerMenuHelper {
         System.out.println("==============================================");
 
         System.out.println("Request ID      : " + request.getRequestId());
-        System.out.println("Employee ID     : " + request.getEmployeeId());
+        System.out.println("EmployeeP ID     : " + request.getEmployeeId());
         System.out.println("Leave Type      : " + request.getLeaveType());
         System.out.println("Start Date      : " + request.getStartDate());
         System.out.println("End Date        : " + request.getEndDate());
@@ -475,7 +475,7 @@ public class ManagerMenuHelper {
 
     private static void viewLeaveBalance(Scanner scanner) {
 
-        System.out.print("Enter Employee ID (String) : ");
+        System.out.print("Enter EmployeeP ID (String) : ");
 
         String employeeId = scanner.nextLine();
         LeaveBalanceService leaveBalanceService = new LeaveBalanceService();
@@ -490,7 +490,7 @@ public class ManagerMenuHelper {
 
         System.out.println();
 
-        System.out.println("Employee ID : " + employeeId);
+        System.out.println("EmployeeP ID : " + employeeId);
         System.out.println("--------------------------------------------------------------");
         System.out.printf("%-15s %-12s %-10s %-12s%n", "Leave Type", "Allocated", "Used", "Available");
         System.out.println("--------------------------------------------------------------");
@@ -521,7 +521,7 @@ public class ManagerMenuHelper {
             System.out.println("                LEAVE REPORTS");
             System.out.println("==============================================");
             System.out.println("1. All Leave Requests");
-            System.out.println("2. Employee Leave Requests");
+            System.out.println("2. EmployeeP Leave Requests");
             System.out.println("3. Back");
             System.out.println("==============================================");
             System.out.print("Enter your choice from 1 to 3 only : ");
@@ -571,7 +571,7 @@ public class ManagerMenuHelper {
         System.out.println("==============================================================================================================");
         System.out.printf("%-10s %-20s %-8s %-12s %-12s %-12s %-6s %-10s%n",
                 "Emp ID",
-                "Employee Name",
+                "EmployeeP Name",
                 "Req ID",
                 "Leave Type",
                 "Start Date",
@@ -606,13 +606,13 @@ public class ManagerMenuHelper {
 
         if (reports.isEmpty()) {
             System.out.println("===================================================================");
-            System.out.println("\nNo leave records found for Employee ID: " + employeeId + "\n");
+            System.out.println("\nNo leave records found for EmployeeP ID: " + employeeId + "\n");
             System.out.println("===================================================================");
         } else {
             System.out.println("==============================================================================================================");
             System.out.printf("%-10s %-20s %-8s %-12s %-12s %-12s %-6s %-10s%n",
                     "Emp ID",
-                    "Employee Name",
+                    "EmployeeP Name",
                     "Req ID",
                     "Leave Type",
                     "Start Date",

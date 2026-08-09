@@ -74,7 +74,7 @@ public class DatabaseInitializer {
             throws SQLException {
 
         String sql = """
-                CREATE TABLE IF NOT EXISTS employees (
+                CREATE TABLE IF NOT EXISTS employeePS (
                     employee_id VARCHAR(10) PRIMARY KEY,
                     employee_name VARCHAR(100) NOT NULL,
                     email VARCHAR(100) NOT NULL UNIQUE,
@@ -108,7 +108,7 @@ public class DatabaseInitializer {
 
                     CONSTRAINT fk_balance_employee
                     FOREIGN KEY (employee_id)
-                    REFERENCES employees(employee_id),
+                    REFERENCES employeePS(employee_id),
 
                     CONSTRAINT unique_employee_leave_type
                     UNIQUE (employee_id, leave_type)
@@ -137,7 +137,7 @@ public class DatabaseInitializer {
 
                     CONSTRAINT fk_request_employee
                     FOREIGN KEY (employee_id)
-                    REFERENCES employees(employee_id),
+                    REFERENCES employeePS(employee_id),
 
                     CONSTRAINT fk_request_manager
                     FOREIGN KEY (approved_by)

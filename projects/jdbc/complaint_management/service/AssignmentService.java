@@ -1,10 +1,10 @@
 package service;
 
 import dao.AssignmentDAO;
+import database.DBConnectionHotel;
 import enums.ComplaintCategory;
 import enums.ComplaintStatus;
 import model.Complaint;
-import database.DBConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -38,7 +38,7 @@ public class AssignmentService implements AssignmentDAO {
     public boolean assignOfficer(String complaintId,
                                  String officerId) {
 
-        try (Connection connection = DBConnection.getDatabaseConnection()) {
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
 
             return assignOfficer(connection,
                     complaintId,
@@ -71,7 +71,7 @@ public class AssignmentService implements AssignmentDAO {
     public boolean reassignOfficer(String complaintId,
                                    String officerId) {
 
-        try (Connection connection = DBConnection.getDatabaseConnection()) {
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
 
             return reassignOfficer(connection,
                     complaintId,
@@ -152,7 +152,7 @@ public class AssignmentService implements AssignmentDAO {
 
     public List<Complaint> viewAssignedComplaints() {
 
-        try (Connection connection = DBConnection.getDatabaseConnection()) {
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
 
             return viewAssignedComplaints(connection);
 
@@ -230,7 +230,7 @@ public class AssignmentService implements AssignmentDAO {
 
     public List<Complaint> viewUnassignedComplaints() {
 
-        try (Connection connection = DBConnection.getDatabaseConnection()) {
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
 
             return viewUnassignedComplaints(connection);
 

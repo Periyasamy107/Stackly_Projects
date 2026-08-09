@@ -1,6 +1,6 @@
 package dao;
 
-import database.DBConnection;
+import database.DBConnectionHotel;
 import enums.BookingStatus;
 import enums.RoomStatus;
 import enums.RoomType;
@@ -25,7 +25,7 @@ public class BookingDAO {
         Connection connection = null;
 
         try {
-            connection = DBConnection.getDatabaseConnection();
+            connection = DBConnectionHotel.getDatabaseConnection();
             connection.setAutoCommit(false);
 
             PreparedStatement bookingSt =  connection.prepareStatement(
@@ -104,7 +104,7 @@ public class BookingDAO {
                 WHERE b.booking_id = ?
                 """;
 
-        try (Connection connection = DBConnection.getDatabaseConnection();
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
 
             statement.setInt(1, bookingId);
@@ -135,7 +135,7 @@ public class BookingDAO {
                 JOIN rooms r on r.room_id = b.room_id
                 """;
 
-        try (Connection connection = DBConnection.getDatabaseConnection();
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection();
              Statement statement = connection.createStatement();
              ResultSet result = statement.executeQuery(sql)) {
 
@@ -153,7 +153,7 @@ public class BookingDAO {
     public boolean updateBookingStatus(int bookingId, BookingStatus bookingStatus) {
         String sql = "UPDATE bookings SET status = ? WHERE booking_id = ?";
 
-        try (Connection connection = DBConnection.getDatabaseConnection();
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
 
             statement.setString(1, bookingStatus.name());

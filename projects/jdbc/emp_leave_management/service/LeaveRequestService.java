@@ -26,7 +26,7 @@ public class LeaveRequestService {
             throws InvalidLeaveRequestException {
 
         if (!employeeDAO.activeEmployeeExists(connection, leaveRequest.getEmployeeId())) {
-            System.out.println("Employee does not exist.");
+            System.out.println("EmployeeP does not exist.");
             return false;
         }
 

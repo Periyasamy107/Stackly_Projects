@@ -68,8 +68,8 @@ public class LeaveReport {
     @Override
     public String toString() {
 
-        return "Employee ID   : " + employeeId +
-                "\nEmployee Name : " + employeeName +
+        return "EmployeeP ID   : " + employeeId +
+                "\nEmployeeP Name : " + employeeName +
                 "\nRequest ID    : " + requestId +
                 "\nLeave Type    : " + leaveType +
                 "\nStart Date    : " + startDate +

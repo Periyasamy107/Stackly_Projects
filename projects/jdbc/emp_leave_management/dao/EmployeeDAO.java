@@ -16,7 +16,7 @@ public class EmployeeDAO {
 
         String sql = """
                 SELECT employee_id
-                FROM employees
+                FROM EmployeeS
                 WHERE employee_id = ?
                 """;
 
@@ -40,7 +40,7 @@ public class EmployeeDAO {
 
         String sql = """
                 SELECT email
-                FROM employees
+                FROM EmployeeS
                 WHERE email = ?
                 """;
 
@@ -87,7 +87,7 @@ public class EmployeeDAO {
 
     public List<Employee> getAllEmployees() {
 
-        List<Employee> employees = new ArrayList<>();
+        List<Employee> EmployeeS = new ArrayList<>();
 
         String sql = """
             SELECT employee_id,
@@ -100,7 +100,7 @@ public class EmployeeDAO {
                    manager_id,
                    status,
                    created_at
-            FROM employees
+            FROM EmployeeS
             ORDER BY employee_id
             """;
 
@@ -109,26 +109,26 @@ public class EmployeeDAO {
              ResultSet resultSet = preparedStatement.executeQuery()) {
 
             while (resultSet.next()) {
-                Employee employee = new Employee();
+                Employee Employee = new Employee();
 
-                employee.setEmployeeId(resultSet.getString("employee_id"));
-                employee.setEmployeeName(resultSet.getString("employee_name"));
-                employee.setEmail(resultSet.getString("email"));
-                employee.setPhone(resultSet.getString("phone"));
-                employee.setDepartment(resultSet.getString("department"));
-                employee.setDesignation(resultSet.getString("designation"));
-                employee.setJoiningDate(resultSet.getDate("joining_date").toLocalDate());
-                employee.setManagerId(resultSet.getString("manager_id"));
-                employee.setStatus(resultSet.getString("status"));
-                employee.setCreatedAt(resultSet.getDate("created_at").toLocalDate());
+                Employee.setEmployeeId(resultSet.getString("employee_id"));
+                Employee.setEmployeeName(resultSet.getString("employee_name"));
+                Employee.setEmail(resultSet.getString("email"));
+                Employee.setPhone(resultSet.getString("phone"));
+                Employee.setDepartment(resultSet.getString("department"));
+                Employee.setDesignation(resultSet.getString("designation"));
+                Employee.setJoiningDate(resultSet.getDate("joining_date").toLocalDate());
+                Employee.setManagerId(resultSet.getString("manager_id"));
+                Employee.setStatus(resultSet.getString("status"));
+                Employee.setCreatedAt(resultSet.getDate("created_at").toLocalDate());
 
-                employees.add(employee);
+                EmployeeS.add(Employee);
             }
         } catch (SQLException e) {
-            System.out.println("\nError retrieving employees.\n");
+            System.out.println("\nError retrieving EmployeeS.\n");
             System.out.println(e.getMessage());
         }
-        return employees;
+        return EmployeeS;
     }
 
 
@@ -145,7 +145,7 @@ public class EmployeeDAO {
                    manager_id,
                    status,
                    created_at
-            FROM employees
+            FROM EmployeeS
             WHERE employee_id = ?
             """;
 
@@ -157,20 +157,20 @@ public class EmployeeDAO {
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 if (resultSet.next()) {
 
-                    Employee employee = new Employee();
+                    Employee Employee = new Employee();
 
-                    employee.setEmployeeId(resultSet.getString("employee_id"));
-                    employee.setEmployeeName(resultSet.getString("employee_name"));
-                    employee.setEmail(resultSet.getString("email"));
-                    employee.setPhone(resultSet.getString("phone"));
-                    employee.setDepartment(resultSet.getString("department"));
-                    employee.setDesignation(resultSet.getString("designation"));
-                    employee.setJoiningDate(resultSet.getDate("joining_date").toLocalDate());
-                    employee.setManagerId(resultSet.getString("manager_id"));
-                    employee.setStatus(resultSet.getString("status"));
-                    employee.setCreatedAt(resultSet.getDate("created_at").toLocalDate());
+                    Employee.setEmployeeId(resultSet.getString("employee_id"));
+                    Employee.setEmployeeName(resultSet.getString("employee_name"));
+                    Employee.setEmail(resultSet.getString("email"));
+                    Employee.setPhone(resultSet.getString("phone"));
+                    Employee.setDepartment(resultSet.getString("department"));
+                    Employee.setDesignation(resultSet.getString("designation"));
+                    Employee.setJoiningDate(resultSet.getDate("joining_date").toLocalDate());
+                    Employee.setManagerId(resultSet.getString("manager_id"));
+                    Employee.setStatus(resultSet.getString("status"));
+                    Employee.setCreatedAt(resultSet.getDate("created_at").toLocalDate());
 
-                    return employee;
+                    return Employee;
                 }
             }
 
@@ -182,10 +182,10 @@ public class EmployeeDAO {
     }
 
 
-    public boolean updateEmployee(Employee employee) {
+    public boolean updateEmployee(Employee Employee) {
 
         String sql = """
-            UPDATE employees
+            UPDATE EmployeeS
             SET employee_name = ?,
                 email = ?,
                 phone = ?,
@@ -200,22 +200,22 @@ public class EmployeeDAO {
         try (Connection connection = DBConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
 
-            preparedStatement.setString(1, employee.getEmployeeName());
-            preparedStatement.setString(2, employee.getEmail());
-            preparedStatement.setString(3, employee.getPhone());
-            preparedStatement.setString(4, employee.getDepartment());
-            preparedStatement.setString(5, employee.getDesignation());
-            preparedStatement.setDate(6, java.sql.Date.valueOf(employee.getJoiningDate()));
-            preparedStatement.setString(7, employee.getManagerId());
-            preparedStatement.setString(8, employee.getStatus());
-            preparedStatement.setString(9, employee.getEmployeeId());
+            preparedStatement.setString(1, Employee.getEmployeeName());
+            preparedStatement.setString(2, Employee.getEmail());
+            preparedStatement.setString(3, Employee.getPhone());
+            preparedStatement.setString(4, Employee.getDepartment());
+            preparedStatement.setString(5, Employee.getDesignation());
+            preparedStatement.setDate(6, java.sql.Date.valueOf(Employee.getJoiningDate()));
+            preparedStatement.setString(7, Employee.getManagerId());
+            preparedStatement.setString(8, Employee.getStatus());
+            preparedStatement.setString(9, Employee.getEmployeeId());
 
             int rowsAffected = preparedStatement.executeUpdate();
 
             return rowsAffected > 0;
 
         } catch (SQLException e) {
-            System.out.println("\nError updating employee.\n");
+            System.out.println("\nError updating Employee.\n");
             System.out.println(e.getMessage());
         }
         return false;
@@ -225,7 +225,7 @@ public class EmployeeDAO {
     public boolean deactiveEmployee(String employeeId) {
 
         String sql = """
-            UPDATE employees
+            UPDATE EmployeeS
             SET status = 'INACTIVE'
             WHERE employee_id = ?
             """;
@@ -251,7 +251,7 @@ public class EmployeeDAO {
 
         String sql = """
             SELECT employee_id
-            FROM employees
+            FROM EmployeeS
             WHERE employee_id = ?
             AND status = 'ACTIVE'
             """;
@@ -272,7 +272,7 @@ public class EmployeeDAO {
 
 
 
-    public boolean registerEmployeeWithBalance(Employee employee) {
+    public boolean registerEmployeeWithBalance(Employee Employee) {
         Connection connection = null;
         try {
             connection = DBConnection.getConnection();
@@ -280,7 +280,7 @@ public class EmployeeDAO {
             connection.setAutoCommit(false);
 
             String employeeSql = """
-                INSERT INTO employees
+                INSERT INTO EmployeeS
                 (
                     employee_id,
                     employee_name,
@@ -297,15 +297,15 @@ public class EmployeeDAO {
 
             try (PreparedStatement preparedStatement = connection.prepareStatement(employeeSql)) {
 
-                preparedStatement.setString(1, employee.getEmployeeId());
-                preparedStatement.setString(2, employee.getEmployeeName());
-                preparedStatement.setString(3, employee.getEmail());
-                preparedStatement.setString(4, employee.getPhone());
-                preparedStatement.setString(5, employee.getDepartment());
-                preparedStatement.setString(6, employee.getDesignation());
-                preparedStatement.setDate(7, java.sql.Date.valueOf(employee.getJoiningDate()));
-                preparedStatement.setString(8, employee.getManagerId());
-                preparedStatement.setString(9, employee.getStatus());
+                preparedStatement.setString(1, Employee.getEmployeeId());
+                preparedStatement.setString(2, Employee.getEmployeeName());
+                preparedStatement.setString(3, Employee.getEmail());
+                preparedStatement.setString(4, Employee.getPhone());
+                preparedStatement.setString(5, Employee.getDepartment());
+                preparedStatement.setString(6, Employee.getDesignation());
+                preparedStatement.setDate(7, java.sql.Date.valueOf(Employee.getJoiningDate()));
+                preparedStatement.setString(8, Employee.getManagerId());
+                preparedStatement.setString(9, Employee.getStatus());
 
                 int rows = preparedStatement.executeUpdate();
 
@@ -328,9 +328,9 @@ public class EmployeeDAO {
 
             try (PreparedStatement preparedStatement = connection.prepareStatement(balanceSql)) {
 
-                insertBalance(preparedStatement, employee.getEmployeeId(), "CASUAL", 12);
-                insertBalance(preparedStatement, employee.getEmployeeId(), "SICK", 10);
-                insertBalance(preparedStatement, employee.getEmployeeId(), "EARNED", 15);
+                insertBalance(preparedStatement, Employee.getEmployeeId(), "CASUAL", 12);
+                insertBalance(preparedStatement, Employee.getEmployeeId(), "SICK", 10);
+                insertBalance(preparedStatement, Employee.getEmployeeId(), "EARNED", 15);
             }
             connection.commit();
             return true;

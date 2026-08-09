@@ -6,7 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class DBConnection {
+public class DBConnectionHotel {
 
     private static final String SERVER_URL = ApplicationConstants.SERVER_URL;
     private static final String DATABASE_URL = ApplicationConstants.DATABASE_URL;

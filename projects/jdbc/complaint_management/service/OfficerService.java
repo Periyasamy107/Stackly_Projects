@@ -1,9 +1,9 @@
 package service;
 
 import dao.OfficerDAO;
+import database.DBConnectionHotel;
 import model.Officer;
 import util.ValidationUtil;
-import database.DBConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -68,7 +68,7 @@ public class OfficerService implements OfficerDAO {
 
     public boolean registerOfficer(Officer officer) {
 
-        try (Connection connection = DBConnection.getDatabaseConnection()) {
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
 
             return registerOfficer(connection, officer);
 
@@ -111,7 +111,7 @@ public class OfficerService implements OfficerDAO {
 
     public List<Officer> viewAllOfficers() {
 
-        try (Connection connection = DBConnection.getDatabaseConnection()) {
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
 
             return viewAllOfficers(connection);
 
@@ -151,7 +151,7 @@ public class OfficerService implements OfficerDAO {
 
     public Officer searchOfficerById(String officerId) {
 
-        try (Connection connection = DBConnection.getDatabaseConnection()) {
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
 
             return searchOfficerById(connection, officerId);
 
@@ -199,7 +199,7 @@ public class OfficerService implements OfficerDAO {
 
     public boolean updateOfficer(Officer officer) {
 
-        try (Connection connection = DBConnection.getDatabaseConnection()) {
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
 
             return updateOfficer(connection, officer);
 
@@ -227,7 +227,7 @@ public class OfficerService implements OfficerDAO {
 
     public boolean deactivateOfficer(String officerId) {
 
-        try (Connection connection = DBConnection.getDatabaseConnection()) {
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
 
             return deactivateOfficer(connection, officerId);
 
@@ -270,7 +270,7 @@ public class OfficerService implements OfficerDAO {
 
     public List<Officer> viewActiveOfficers() {
 
-        try (Connection connection = DBConnection.getDatabaseConnection()) {
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
 
             return viewActiveOfficers(connection);
 

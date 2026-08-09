@@ -1,10 +1,10 @@
 package service;
 
 import dao.ComplaintReportDAO;
+import database.DBConnectionHotel;
 import enums.ComplaintCategory;
 import enums.ComplaintStatus;
 import model.Complaint;
-import database.DBConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -43,7 +43,7 @@ public class ComplaintReportService implements ComplaintReportDAO {
 
     public Map<String, Long> getComplaintCountByStatus() {
 
-        try (Connection connection = DBConnection.getDatabaseConnection()) {
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
 
             return getComplaintCountByStatus(connection);
 
@@ -83,7 +83,7 @@ public class ComplaintReportService implements ComplaintReportDAO {
 
     public Map<String, Long> getComplaintCountByCategory() {
 
-        try (Connection connection = DBConnection.getDatabaseConnection()) {
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
 
             return getComplaintCountByCategory(connection);
 
@@ -125,7 +125,7 @@ public class ComplaintReportService implements ComplaintReportDAO {
 
     public Map<String, Long> getComplaintCountByOfficer() {
 
-        try (Connection connection = DBConnection.getDatabaseConnection()) {
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
 
             return getComplaintCountByOfficer(connection);
 
@@ -153,7 +153,7 @@ public class ComplaintReportService implements ComplaintReportDAO {
 
     public List<Complaint> getUnresolvedComplaints() {
 
-        try (Connection connection = DBConnection.getDatabaseConnection()) {
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
 
             return getUnresolvedComplaints(connection);
 
@@ -181,7 +181,7 @@ public class ComplaintReportService implements ComplaintReportDAO {
 
     public List<Complaint> getResolvedComplaints() {
 
-        try (Connection connection = DBConnection.getDatabaseConnection()) {
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
 
             return getResolvedComplaints(connection);
 

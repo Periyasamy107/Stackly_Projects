@@ -20,7 +20,7 @@ public class DatabaseManager {
 
     private static void createDatabase() {
         String sql = "CREATE DATABASE IF NOT EXISTS complaint_management_db";
-        try(Connection connection = DBConnection.getServerConnection();
+        try(Connection connection = DBConnectionHotel.getServerConnection();
             Statement statement = connection.createStatement()) {
 
             statement.executeUpdate(sql);
@@ -82,7 +82,7 @@ public class DatabaseManager {
     }
 
     private static void executeTableCreation(String sql, String tableName) {
-        try(Connection connection = DBConnection.getDatabaseConnection();
+        try(Connection connection = DBConnectionHotel.getDatabaseConnection();
             Statement statement = connection.createStatement()) {
 
             statement.executeUpdate(sql);

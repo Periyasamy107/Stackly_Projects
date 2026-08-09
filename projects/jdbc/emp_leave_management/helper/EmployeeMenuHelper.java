@@ -117,19 +117,19 @@ public class EmployeeMenuHelper {
         System.out.print("Enter Manager ID (String) : ");
         String managerId = scanner.nextLine();
 
-        Employee employee = new Employee();
+        Employee Employee = new Employee();
 
-        employee.setEmployeeId(employeeId);
-        employee.setEmployeeName(employeeName);
-        employee.setEmail(email);
-        employee.setPhone(phone);
-        employee.setDepartment(department);
-        employee.setDesignation(designation);
-        employee.setJoiningDate(joiningDate);
-        employee.setManagerId(managerId);
+        Employee.setEmployeeId(employeeId);
+        Employee.setEmployeeName(employeeName);
+        Employee.setEmail(email);
+        Employee.setPhone(phone);
+        Employee.setDepartment(department);
+        Employee.setDesignation(designation);
+        Employee.setJoiningDate(joiningDate);
+        Employee.setManagerId(managerId);
 
         // Automatically assigned
-        employee.setStatus("ACTIVE");
+        Employee.setStatus("ACTIVE");
 
         EmployeeService employeeService = new EmployeeService();
 
@@ -142,7 +142,7 @@ public class EmployeeMenuHelper {
 
         if(!ValidationUtilEmp.isValidName(employeeName)) {
             System.out.println("==================================================");
-            System.out.println("\nInvalid employee name.\n");
+            System.out.println("\nInvalid Employee name.\n");
             System.out.println("==================================================");
             return;
         }
@@ -175,7 +175,7 @@ public class EmployeeMenuHelper {
             return;
         }
 
-        boolean registered = employeeService.registerEmployee(employee);
+        boolean registered = employeeService.registerEmployee(Employee);
 
         if (registered) {
             System.out.println("==================================================");
@@ -191,32 +191,32 @@ public class EmployeeMenuHelper {
     private static void viewAllEmployees() {
 
         EmployeeService employeeService = new EmployeeService();
-        List<Employee> employees = employeeService.getAllEmployees();
+        List<Employee> EmployeeS = employeeService.getAllEmployees();
 
         System.out.println("==============================================================");
         System.out.println("                    ALL EMPLOYEES");
         System.out.println("==============================================================");
 
-        if (employees.isEmpty()) {
+        if (EmployeeS.isEmpty()) {
             System.out.println("==================================================");
-            System.out.println("\nNo employees found.\n");
+            System.out.println("\nNo EmployeeS found.\n");
             System.out.println("==================================================");
             return;
         } else {
-            for (Employee employee : employees) {
+            for (Employee Employee : EmployeeS) {
 
                 System.out.println("----------------------------------------------");
 
-                System.out.println("Employee ID   : " + employee.getEmployeeId());
-                System.out.println("Name          : " + employee.getEmployeeName());
-                System.out.println("Email         : " + employee.getEmail());
-                System.out.println("Phone         : " + employee.getPhone());
-                System.out.println("Department    : " + employee.getDepartment());
-                System.out.println("Designation   : " + employee.getDesignation());
-                System.out.println("Joining Date  : " + employee.getJoiningDate());
-                System.out.println("Manager ID    : " + employee.getManagerId());
-                System.out.println("Status        : " + employee.getStatus());
-                System.out.println("Created Date  : " + employee.getCreatedAt());
+                System.out.println("Employee ID   : " + Employee.getEmployeeId());
+                System.out.println("Name          : " + Employee.getEmployeeName());
+                System.out.println("Email         : " + Employee.getEmail());
+                System.out.println("Phone         : " + Employee.getPhone());
+                System.out.println("Department    : " + Employee.getDepartment());
+                System.out.println("Designation   : " + Employee.getDesignation());
+                System.out.println("Joining Date  : " + Employee.getJoiningDate());
+                System.out.println("Manager ID    : " + Employee.getManagerId());
+                System.out.println("Status        : " + Employee.getStatus());
+                System.out.println("Created Date  : " + Employee.getCreatedAt());
             }
 
             System.out.println("==============================================================");
@@ -230,9 +230,9 @@ public class EmployeeMenuHelper {
 
         String employeeId = scanner.nextLine();
         EmployeeService employeeService = new EmployeeService();
-        Employee employee = employeeService.getEmployeeById(employeeId);
+        Employee Employee = employeeService.getEmployeeById(employeeId);
 
-        if (employee == null) {
+        if (Employee == null) {
             System.out.println("==================================================");
             System.out.println("\nEmployee not found.\n");
             System.out.println("==================================================");
@@ -244,16 +244,16 @@ public class EmployeeMenuHelper {
         System.out.println("              EMPLOYEE DETAILS");
         System.out.println("==============================================");
 
-        System.out.println("Employee ID  : " + employee.getEmployeeId());
-        System.out.println("Name         : " + employee.getEmployeeName());
-        System.out.println("Email        : " + employee.getEmail());
-        System.out.println("Phone        : " + employee.getPhone());
-        System.out.println("Department   : " + employee.getDepartment());
-        System.out.println("Designation  : " + employee.getDesignation());
-        System.out.println("Joining Date : " + employee.getJoiningDate());
-        System.out.println("Manager ID   : " + employee.getManagerId());
-        System.out.println("Status       : " + employee.getStatus());
-        System.out.println("Created Date : " + employee.getCreatedAt());
+        System.out.println("Employee ID  : " + Employee.getEmployeeId());
+        System.out.println("Name         : " + Employee.getEmployeeName());
+        System.out.println("Email        : " + Employee.getEmail());
+        System.out.println("Phone        : " + Employee.getPhone());
+        System.out.println("Department   : " + Employee.getDepartment());
+        System.out.println("Designation  : " + Employee.getDesignation());
+        System.out.println("Joining Date : " + Employee.getJoiningDate());
+        System.out.println("Manager ID   : " + Employee.getManagerId());
+        System.out.println("Status       : " + Employee.getStatus());
+        System.out.println("Created Date : " + Employee.getCreatedAt());
 
         System.out.println("==============================================");
     }
@@ -265,9 +265,9 @@ public class EmployeeMenuHelper {
 
         String employeeId = scanner.nextLine();
         EmployeeService employeeService = new EmployeeService();
-        Employee employee = employeeService.getEmployeeById(employeeId);
+        Employee Employee = employeeService.getEmployeeById(employeeId);
 
-        if (employee == null) {
+        if (Employee == null) {
             System.out.println("==================================================");
             System.out.println("\nEmployee not found.\n");
             System.out.println("==================================================");
@@ -275,31 +275,31 @@ public class EmployeeMenuHelper {
         }
 
         System.out.print("\nEnter Employee Name (String) : ");
-        employee.setEmployeeName(scanner.nextLine());
+        Employee.setEmployeeName(scanner.nextLine());
 
         System.out.print("Enter Email (String) : ");
-        employee.setEmail(scanner.nextLine());
+        Employee.setEmail(scanner.nextLine());
 
         System.out.print("Enter Phone (10-digits) (String) : ");
-        employee.setPhone(scanner.nextLine());
+        Employee.setPhone(scanner.nextLine());
 
         System.out.print("Enter Department (String) : ");
-        employee.setDepartment(scanner.nextLine());
+        Employee.setDepartment(scanner.nextLine());
 
         System.out.print("Enter Designation (String) : ");
-        employee.setDesignation(scanner.nextLine());
+        Employee.setDesignation(scanner.nextLine());
 
         System.out.print("Enter Joining Date (yyyy-MM-dd): ");
 
-        employee.setJoiningDate(LocalDate.parse(scanner.nextLine()));
+        Employee.setJoiningDate(LocalDate.parse(scanner.nextLine()));
 
         System.out.print("Enter Manager ID (String) : ");
-        employee.setManagerId(scanner.nextLine());
+        Employee.setManagerId(scanner.nextLine());
 
         System.out.print("Enter Status (ACTIVE/INACTIVE): ");
-        employee.setStatus(scanner.nextLine());
+        Employee.setStatus(scanner.nextLine());
 
-        boolean updated = employeeService.updateEmployee(employee);
+        boolean updated = employeeService.updateEmployee(Employee);
 
         if (updated) {
             System.out.println("==================================================");

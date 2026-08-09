@@ -1,6 +1,6 @@
 package dao;
 
-import database.DBConnection;
+import database.DBConnectionHotel;
 import model.Customer;
 
 import java.sql.*;
@@ -16,7 +16,7 @@ public class CustomerDAO {
                 values (?, ?, ?, ?, ?)
                 """;
 
-        try (Connection connection = DBConnection.getDatabaseConnection();
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection();
              PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 
             statement.setString(1, customer.getCustomerName());
@@ -45,7 +45,7 @@ public class CustomerDAO {
     public Customer findById(int customerId) {
         String sql = "SELECT * FROM customers WHERE customer_id = ?";
 
-        try (Connection connection = DBConnection.getDatabaseConnection();
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
 
             statement.setInt(1, customerId);
@@ -66,7 +66,7 @@ public class CustomerDAO {
     public Customer findByPhone(String phone) {
         String sql = "SELECT * FROM customers WHERE phone = ?";
 
-        try (Connection connection = DBConnection.getDatabaseConnection();
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
 
             statement.setString(1, phone);
@@ -88,7 +88,7 @@ public class CustomerDAO {
         List<Customer> customers = new ArrayList<>();
         String sql = "SELECT * FROM customers";
 
-        try (Connection connection = DBConnection.getDatabaseConnection();
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection();
              Statement statement = connection.createStatement();
              ResultSet result = statement.executeQuery(sql)) {
 
@@ -113,7 +113,7 @@ public class CustomerDAO {
                 WHERE customer_id = ?
                 """;
 
-        try (Connection connection = DBConnection.getDatabaseConnection();
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
 
             statement.setString(1, customer.getCustomerName());
@@ -136,7 +136,7 @@ public class CustomerDAO {
     public boolean removeCustomer(int customerId) {
         String sql = "DELETE FROM customers WHERE customer_id = ?";
 
-        try (Connection connection = DBConnection.getDatabaseConnection();
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection();
              PreparedStatement statement= connection.prepareStatement(sql)) {
 
             statement.setInt(1, customerId);

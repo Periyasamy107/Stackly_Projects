@@ -26,7 +26,7 @@ public class LeaveReportDAO {
                     lr.end_date,
                     lr.number_of_days,
                     lr.status
-                FROM employees e
+                FROM employeePS e
                 JOIN leave_requests lr
                     ON e.employee_id = lr.employee_id
                 ORDER BY lr.request_id
@@ -75,7 +75,7 @@ public class LeaveReportDAO {
                 lr.end_date,
                 lr.number_of_days,
                 lr.status
-            FROM employees e
+            FROM employeePS e
             JOIN leave_requests lr
                 ON e.employee_id = lr.employee_id
             WHERE e.employee_id = ?

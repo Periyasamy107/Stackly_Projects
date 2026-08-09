@@ -10,6 +10,7 @@
       <sourceFolder url="file://$MODULE_DIR$/projects/jdbc/complaint_management" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/projects/jdbc/emp_leave_management" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/projects/jdbc/hotel_booking_management" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/projects/jdbc/payroll_management" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

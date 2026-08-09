@@ -19,7 +19,7 @@ public class DatabaseManagerHotel {
 
     private static void createDatabase() {
         String sql = "CREATE DATABASE IF NOT EXISTS " + ApplicationConstants.DATABASE_NAME;
-        try(Connection connection = DBConnection.getServerConnection();
+        try(Connection connection = DBConnectionHotel.getServerConnection();
             Statement statement = connection.createStatement()) {
             System.out.println("\nConnecting to MySQL server.");
             System.out.println("Connection established.\n");
@@ -84,7 +84,7 @@ public class DatabaseManagerHotel {
     }
 
     private static void executeTableCreation(String sql, String tableName) {
-        try(Connection connection = DBConnection.getDatabaseConnection();
+        try(Connection connection = DBConnectionHotel.getDatabaseConnection();
             Statement statement = connection.createStatement()) {
             statement.executeUpdate(sql);
             System.out.println(tableName + " table is ready.\n");
@@ -97,7 +97,7 @@ public class DatabaseManagerHotel {
     private static void checkAndInsertDefaultRooms() {
         String sql = "SELECT COUNT(*) FROM rooms";
 
-        try(Connection connection = DBConnection.getDatabaseConnection();
+        try(Connection connection = DBConnectionHotel.getDatabaseConnection();
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(sql)) {
 
@@ -123,7 +123,7 @@ public class DatabaseManagerHotel {
                 values (?, ?, ?, ?)
                 """;
 
-        try(Connection connection = DBConnection.getDatabaseConnection();
+        try(Connection connection = DBConnectionHotel.getDatabaseConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
 
             addRoom(preparedStatement, "101", RoomType.SINGLE);

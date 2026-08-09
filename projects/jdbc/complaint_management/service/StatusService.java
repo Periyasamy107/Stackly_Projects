@@ -1,12 +1,12 @@
 package service;
 
 import dao.StatusDAO;
+import database.DBConnectionHotel;
 import enums.ComplaintCategory;
 import enums.ComplaintStatus;
 import exception.InvalidStatusException;
 import exception.ComplaintNotFoundException;
 import model.Complaint;
-import database.DBConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -42,7 +42,7 @@ public class StatusService implements StatusDAO {
 //    public boolean updateStatus(String complaintId,
 //                                ComplaintStatus status) {
 //
-//        try (Connection connection = DBConnection.getDatabaseConnection()) {
+//        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
 //
 //            return updateStatus(connection, complaintId, status);
 //
@@ -110,7 +110,7 @@ public class StatusService implements StatusDAO {
                                 ComplaintStatus status) {
 
         try (Connection connection =
-                     DBConnection.getDatabaseConnection()) {
+                     DBConnectionHotel.getDatabaseConnection()) {
 
             return updateStatus(
                     connection,
@@ -231,7 +231,7 @@ public class StatusService implements StatusDAO {
 
     public ComplaintStatus viewStatus(String complaintId) {
 
-        try (Connection connection = DBConnection.getDatabaseConnection()) {
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
 
             return viewStatus(connection, complaintId);
 
@@ -278,7 +278,7 @@ public class StatusService implements StatusDAO {
     public List<Complaint> viewComplaintsByStatus(
             ComplaintStatus status) {
 
-        try (Connection connection = DBConnection.getDatabaseConnection()) {
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
 
             return viewComplaintsByStatus(connection, status);
 
@@ -301,7 +301,7 @@ public class StatusService implements StatusDAO {
 
     public List<Complaint> viewPendingComplaints() {
 
-        try (Connection connection = DBConnection.getDatabaseConnection()) {
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
 
             return viewPendingComplaints(connection);
 
@@ -323,7 +323,7 @@ public class StatusService implements StatusDAO {
 
     public List<Complaint> viewInProgressComplaints() {
 
-        try (Connection connection = DBConnection.getDatabaseConnection()) {
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
 
             return viewInProgressComplaints(connection);
 
@@ -345,7 +345,7 @@ public class StatusService implements StatusDAO {
 
     public List<Complaint> viewResolvedComplaints() {
 
-        try (Connection connection = DBConnection.getDatabaseConnection()) {
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
 
             return viewResolvedComplaints(connection);
 
@@ -367,7 +367,7 @@ public class StatusService implements StatusDAO {
 
     public List<Complaint> viewClosedComplaints() {
 
-        try (Connection connection = DBConnection.getDatabaseConnection()) {
+        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
 
             return viewClosedComplaints(connection);
 
