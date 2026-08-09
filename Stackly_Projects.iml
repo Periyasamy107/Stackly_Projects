@@ -7,8 +7,18 @@
       <sourceFolder url="file://$MODULE_DIR$/projects/votingProject/voting" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/projects/libraryProject" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/projects/movieTicketBooking" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/projects/jdbc/complaint_management" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/mysql-connector-j-26.7.0/mysql-connector-j-26.7.0/mysql-connector-j-26.7.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
