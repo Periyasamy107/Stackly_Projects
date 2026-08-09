@@ -679,7 +679,7 @@ public class PayrollMenu {
             System.out.println("2. Process Single Payroll");
             System.out.println("3. Process Payroll in Batch");
             System.out.println("4. View All Payroll");
-            System.out.println("5. View EmployeeP Payroll");
+            System.out.println("5. View Employee Payroll");
             System.out.println("6. Calculate Tax");
             System.out.println("7. Back");
             System.out.println("==================================================");
@@ -1092,7 +1092,7 @@ public class PayrollMenu {
         );
 
         System.out.println(
-                "EmployeeP Name     : " + employeeP.getEmployeeName()
+                "Employee Name     : " + employeeP.getEmployeeName()
         );
 
         System.out.println(

@@ -1,7 +1,7 @@
 package service;
 
 import dao.OfficerDAO;
-import database.DBConnectionHotel;
+import database.DBConnection;
 import model.Officer;
 import util.ValidationUtil;
 
@@ -68,7 +68,7 @@ public class OfficerService implements OfficerDAO {
 
     public boolean registerOfficer(Officer officer) {
 
-        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
+        try (Connection connection = DBConnection.getDatabaseConnection()) {
 
             return registerOfficer(connection, officer);
 
@@ -111,7 +111,7 @@ public class OfficerService implements OfficerDAO {
 
     public List<Officer> viewAllOfficers() {
 
-        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
+        try (Connection connection = DBConnection.getDatabaseConnection()) {
 
             return viewAllOfficers(connection);
 
@@ -151,7 +151,7 @@ public class OfficerService implements OfficerDAO {
 
     public Officer searchOfficerById(String officerId) {
 
-        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
+        try (Connection connection = DBConnection.getDatabaseConnection()) {
 
             return searchOfficerById(connection, officerId);
 
@@ -199,7 +199,7 @@ public class OfficerService implements OfficerDAO {
 
     public boolean updateOfficer(Officer officer) {
 
-        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
+        try (Connection connection = DBConnection.getDatabaseConnection()) {
 
             return updateOfficer(connection, officer);
 
@@ -227,7 +227,7 @@ public class OfficerService implements OfficerDAO {
 
     public boolean deactivateOfficer(String officerId) {
 
-        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
+        try (Connection connection = DBConnection.getDatabaseConnection()) {
 
             return deactivateOfficer(connection, officerId);
 
@@ -270,7 +270,7 @@ public class OfficerService implements OfficerDAO {
 
     public List<Officer> viewActiveOfficers() {
 
-        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
+        try (Connection connection = DBConnection.getDatabaseConnection()) {
 
             return viewActiveOfficers(connection);
 

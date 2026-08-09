@@ -1,7 +1,7 @@
 package service;
 
 import dao.ComplaintReportDAO;
-import database.DBConnectionHotel;
+import database.DBConnection;
 import enums.ComplaintCategory;
 import enums.ComplaintStatus;
 import model.Complaint;
@@ -43,7 +43,7 @@ public class ComplaintReportService implements ComplaintReportDAO {
 
     public Map<String, Long> getComplaintCountByStatus() {
 
-        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
+        try (Connection connection = DBConnection.getDatabaseConnection()) {
 
             return getComplaintCountByStatus(connection);
 
@@ -83,7 +83,7 @@ public class ComplaintReportService implements ComplaintReportDAO {
 
     public Map<String, Long> getComplaintCountByCategory() {
 
-        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
+        try (Connection connection = DBConnection.getDatabaseConnection()) {
 
             return getComplaintCountByCategory(connection);
 
@@ -125,7 +125,7 @@ public class ComplaintReportService implements ComplaintReportDAO {
 
     public Map<String, Long> getComplaintCountByOfficer() {
 
-        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
+        try (Connection connection = DBConnection.getDatabaseConnection()) {
 
             return getComplaintCountByOfficer(connection);
 
@@ -153,7 +153,7 @@ public class ComplaintReportService implements ComplaintReportDAO {
 
     public List<Complaint> getUnresolvedComplaints() {
 
-        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
+        try (Connection connection = DBConnection.getDatabaseConnection()) {
 
             return getUnresolvedComplaints(connection);
 
@@ -181,7 +181,7 @@ public class ComplaintReportService implements ComplaintReportDAO {
 
     public List<Complaint> getResolvedComplaints() {
 
-        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
+        try (Connection connection = DBConnection.getDatabaseConnection()) {
 
             return getResolvedComplaints(connection);
 

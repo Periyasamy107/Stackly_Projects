@@ -1,7 +1,7 @@
 package service;
 
 import dao.UserDAO;
-import database.DBConnectionHotel;
+import database.DBConnection;
 import exception.DuplicateUserException;
 import model.User;
 import util.ValidationUtil;
@@ -80,7 +80,7 @@ public class UserService implements UserDAO {
 
     public boolean registerUser(User user) {
 
-        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
+        try (Connection connection = DBConnection.getDatabaseConnection()) {
 
             return registerUser(connection, user);
 
@@ -124,7 +124,7 @@ public class UserService implements UserDAO {
 
     public List<User> viewAllUsers() {
 
-        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
+        try (Connection connection = DBConnection.getDatabaseConnection()) {
 
             return viewAllUsers(connection);
 
@@ -165,7 +165,7 @@ public class UserService implements UserDAO {
 
     public User searchUserById(String userId) {
 
-        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
+        try (Connection connection = DBConnection.getDatabaseConnection()) {
 
             return searchUserById(connection, userId);
 
@@ -213,7 +213,7 @@ public class UserService implements UserDAO {
 
     public boolean updateUser(User user) {
 
-        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
+        try (Connection connection = DBConnection.getDatabaseConnection()) {
 
             return updateUser(connection, user);
 
@@ -241,7 +241,7 @@ public class UserService implements UserDAO {
 
     public boolean deactivateUser(String userId) {
 
-        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
+        try (Connection connection = DBConnection.getDatabaseConnection()) {
 
             return deactivateUser(connection, userId);
 
@@ -284,7 +284,7 @@ public class UserService implements UserDAO {
 
     public List<User> viewActiveUsers() {
 
-        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
+        try (Connection connection = DBConnection.getDatabaseConnection()) {
 
             return viewActiveUsers(connection);
 
@@ -327,7 +327,7 @@ public class UserService implements UserDAO {
 
     public List<User> viewDeactivatedUsers() {
 
-        try (Connection connection = DBConnectionHotel.getDatabaseConnection()) {
+        try (Connection connection = DBConnection.getDatabaseConnection()) {
 
             return viewDeactivatedUsers(connection);
 
